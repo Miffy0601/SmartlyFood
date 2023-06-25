@@ -1,0 +1,172 @@
+<div class="signin_view"> 
+  <img src="./assets/img/cafe.png" alt="" class="pc_img">
+  <img src="./assets/img/food_img_img.jpeg" alt="" class="sp_img">
+  <div class="signin_view_right">
+    <p class="title">Smartly Food</p>
+    <p class="sub_title">あなたのちょっとした工夫で世界への貢献を。</p>
+    <form action="/signin" method="post">
+      <div class="input_wrap">
+        <span>Mail Address</span>
+        <input type="text" name="mail"  >
+      </div>
+      <div class="input_wrap">
+        <span>Password</span>
+        <input type="password" name="password" >
+      </div>
+      
+      <input class="login_button"type="submit" value="ログイン">
+    </form>  
+    <a href="/signup" class="signup_button">
+      新規登録
+    </a>
+  </div>
+</div>
+
+<style>
+  .signin_view{
+    display:flex;
+  }
+  .pc_img{
+    display:block;
+  }
+  .sp_img{
+    display:none;
+  }
+  .signin_view img{
+    width:50%;
+    /*windowの高さを１００にする*/
+    height:100vh;
+    object-fit:cover;
+  }
+  
+  .signin_view_right{
+    width:50%;
+    height:100vh;
+  }
+  .signin_view_right .title{
+    margin-top:90px;
+    font-size: 80px;
+    color:#22A999;
+    text-align:center;
+
+  }
+  .signin_view_right .sub_title{
+    margin-top:10px;
+    font-size:30px;
+    color:#22A999;
+    text-align:center;
+
+  }
+  .input_wrap{
+    display:flex;
+    justify-content:space-between;
+    width:630px;
+    margin:0 auto;
+    margin-top:30px;
+  
+  }
+  
+.input_wrap span{
+  font-size:30px;
+  color:#888888;
+  
+}
+.input_wrap input{
+  width:400px;
+  background-color:#D9D9D9;
+  border:0px;
+  color:#888888 !important;
+  
+}
+input[type="text"]:focus{
+    color: #888888;
+}
+.login_button{
+  width:200px;
+  height:85px;
+  background-color:#22A999;
+  color:white !important;
+  border:0px;
+  font-size:25px;
+  display:block;
+  margin:0 auto;
+  margin-top:70px;
+}
+.signup_button{
+  width:200px;
+  height:85px;
+  background-color:white;
+  color:#22A999 !important;
+  border:3px solid #22A999;
+  
+  font-size:25px;
+  text-align:center;
+  line-height:85px;
+  display:block;
+  margin:0 auto;
+  margin-top:50px;
+}
+
+@media screen and (max-width: 1024px) {
+  .signin_view{
+    display: block;
+	/* 1024px以下に適用されるCSS（タブレット用） */
+  }
+  .signin_view img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+  }
+  .pc_img{
+    display:none;
+  }
+  .sp_img{
+    display:block;
+  }
+  .signin_view_right{
+    width:100%;
+    height:auto;
+    padding:30px;
+  }
+  .signin_view_right .title{
+   font-size: 40px;
+   margin-top:30px;
+  
+  }
+  .signin_view_right .sub_title{
+    font-size: 20px;
+  }
+  .login_button{
+    margin-top:30px;
+    width:160px;
+    height:45px;
+    font-size:15px;
+  }
+  .signup_button{
+    margin-top:20px;
+  }
+  .input_wrap span{
+    font-size:20px;
+    
+    
+  }
+  .input_wrap{
+    flex-direction: column;
+    width:100%;
+  }
+  .input_wrap input{
+    width:100%;
+    height:32px;
+  }
+  .signup_button{
+    margin-top:30px;
+    width:160px;
+    height:45px;
+    font-size:15px;
+    line-height:45px;
+  }
+}
+</style>
+
+
+

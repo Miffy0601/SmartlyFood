@@ -1,0 +1,133 @@
+<body>
+    <header>
+        <h1>未使用</h1>
+    </header>
+    <div class="unused_wrap">
+        <form action="/food_unused_post" method="post">
+            <div>
+                <div class="input_wrap">
+                    <span>Food's name</span>
+                    <input name="food_name" placeholder="Ex.) にんじん ">
+                </div>
+                <div class="input_wrap">
+                     <span>Amount</span>
+                    <input name="amount" placeholder="Ex.) 1500">
+                </div>
+                <div class="input_wrap">
+                     <span>Quantity</span>
+                    <input name="quantity" placeholder="Ex.) 1">
+                </div>
+                <div class="input_wrap">
+                     <span>Day</span>
+                    <input name="date" placeholder="Ex.) 日曜日">
+                </div>
+                <div class="input_wrap">
+                    <input type="submit" value="Record"style="margin:30px auto;">
+                </div>
+            </div>
+        </form>
+        <img src="./assets/img/salad_woman.svg">
+    </div>
+</body>
+<style>
+header{
+    height: 125px;
+    background-color:#24B5A3;
+    text-align:center;
+    line-height:125px;
+    color:white;
+}
+   
+.unused_wrap {
+    display:flex;
+}
+.unused_wrap form{
+    width:50%;
+}
+.unused_wrap img{
+    width:50%;
+    display:block;
+    height:500px;
+    margin-top:50px;
+}
+.input_wrap{
+    width:700px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-left:30px;
+    font-size:25px;
+    color:#24B5A3;
+}
+.input_wrap input{
+     width:400px;
+     height:60px;
+     margin-top:20px;
+  background-color:#D9D9D9;
+  border:0px;
+  margin:30px;
+}
+.record{
+  width:200px;
+  height:85px;
+  background-color:white;
+  color:#22A999 !important;
+  border:3px solid #22A999;
+  
+  font-size:25px;
+  text-align:center;
+  line-height:85px;
+  display:block;
+  margin:0 auto;
+  margin-top:50px;
+  border-radius:20px;
+}
+
+.input_wrap input[type="submit"]{
+    display:block;
+    background-color:#24B5A3;
+    color: white;!important;
+    text-align:center;
+    width:200px;
+    line-height:80px;
+    height:80px;
+    border:3px solid  #24B5A3;
+    margin-top:30px;
+    margin:70px;
+    font-size:30px;
+    
+    
+}
+@media screen and (max-width: 1024px) {
+  .unused_wrap{
+   display:flex;
+   flex-direction:column-reverse;
+   width:100%;
+   height:100%;
+  }
+  .unused_wrap img{
+    width:80%;
+    height:400px;
+    margin:auto;
+    margin-top:40px;
+    
+  }
+  .input_wrap{
+    width:100%;
+    height:100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin:0px;
+    padding-right:30px;
+  }
+  .unused_wrap form{
+      width:100%;
+  }
+  .input_wrap input{
+      width:100%;
+      margin:30px 0px;
+  }
+    
+}
+
+</style>

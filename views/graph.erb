@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+　<title>グラフ</title> 
+　
+</head>
+<body class="background"> <!-- background-image: url(/assets/画像名) -->
+  
+  <h1></h1>
+  <a class="back" href="/back">戻る</a>
+  <div style="position:relative;width:100%;height:100%;">
+  <canvas id="Graph"></canvas>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+  <script>
+    var ctx = document.getElementById("Graph");
+    var myBarChart = new Chart(ctx, {
+      //折れ線グラフ
+      type: 'line',
+      data: {
+        labels: [
+          "月","火","水","木","金","土","日"
+        ],
+        datasets: [
+          {
+            // グラフの名前
+            label: '食べ残し',
+            data: [
+              <% @foods.each do |food| %>
+                <%if(!food.meal.empty? )%>
+                  <%= food.amount.to_f / 1000 %>,
+                <% elsif (food.meal.empty? ) %> 
+                  0,
+                <% end %> 
+              <% end %>
+            ],
+            backgroundColor: "rgba(255,255,255,0)",
+            borderColor: "#eba7a7",
+            lineTension : 0, // グラフの丸みをなくす
+          },
+          {
+            // グラフの名前
+            label: '未使用量',
+            fontColor: "black",
+            data: [
+              <% @foods.each do |food| %>
+                <%if(!food.food_name.empty?)%>
+                  <%= food.amount.to_f * food.quantity  / 1000 %>,
+                <% elsif (food.meal.empty? ) %> 
+                  0,
+                <% end %>
+              <% end %> 
+              ],
+            backgroundColor: "rgba(255,255,255,0)",
+            borderColor: "#a9c995",
+            lineTension : 0 // グラフの丸みをなくす
+          },
+        ]
+      },
+      options: {
+        legend: {
+            labels: {
+              // このフォントプロパティ指定は、グローバルプロパティを上書きします
+              fontColor: "rgb(36,181,163)",
+            }
+        },
+        title: {
+          display: true,
+          // 全体の名前
+          text: 'フードロスのグラフ',
+          fontColor: "rgb(36,181,163)"
+        },
+        scales: {
+          xAxes: [{  // Ｘ軸設定
+              scaleLabel: {                 // 軸ラベル
+                  display: true,                // 表示設定
+                  fontColor: "#992d2d",             // 文字の色
+              },
+              gridLines: {                   // 補助線
+                  color: "#ffdfc0", // 補助線の色
+              },
+              ticks: {                      // 目盛り
+                  fontColor: "rgb(36,181,163)",             // 目盛りの色
+              }
+            }
+          ],
+          yAxes: [{  // Y軸設定
+            scaleLabel: {                 // 軸ラベル
+                display: true,                // 表示設
+                fontColor: "#992d2d",             // 文字の色
+            },
+            gridLines: {                   // 補助線
+                color: "#ffdfc0", // 補助線の色
+            },
+            ticks: {
+              fontColor: "rgb(36,181,163)",             // 目盛りの色
+              suggestedMax: 3.5,
+              suggestedMin: 0,
+              stepSize: 0.5, //　Y軸の目盛りの幅数
+              callback: function(value, index, values){
+                return  value
+              }
+            }
+          }]
+        },
+      }
+    });
+  </script>
+<style>
+.back{
+    display:block;
+    background-color:#24B5A3;
+    color: white !important;
+    text-align:center;
+    width:200px;
+    line-height:80px;
+    height:80px;
+    border:3px solid  #24B5A3;
+    margin-top:30px;
+    margin:70px;
+    font-size:30px;
+}
+#Graph{
+  height:100% !important;
+}
+@media screen and (max-width: 1024px) {
+  .back{
+  width:100%;
+  height:100%;
+}
+</style>
+</body>
+</html>
+

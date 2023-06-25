@@ -1,0 +1,91 @@
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+ .background{
+
+  }
+input{
+    border: 10;
+    background: white;
+    display: pink;
+    margin: auto;
+    
+    width: 18%;
+    text-align: center;
+    
+    /* 上との余白 */
+    margin-top: 20px;
+    
+    /* 文字の大きさ */
+    font-size: 30px;
+    border-radius: 8px; 
+padding:10px;
+}
+h2{
+    color:#ffffff;
+}
+h3{
+    color:#ffffff;
+    
+
+}
+.rogout{
+    color:#ffffff;
+    bacground:#a0a0a0;
+    text-decoration: none;
+    border: 1px solid;
+    border-color: #ffffff;
+border-radius: 8px; /* 半径が8pxの角丸 */
+padding:10px;
+display:block;
+width:fit-content;
+}
+.record{
+    color:#ffffff;
+    text-decoration: none;
+    text-decoration: none;
+    border: 1px solid;
+    border-color: #ffffff;
+border-radius: 8px; 
+padding:10px;
+display:block;
+width:fit-content;
+}
+.register{
+color:#ffffff;
+    text-decoration: none;
+    text-decoration: none;
+    border: 1px solid;
+    border-color: #ffffff;
+border-radius: 8px; 
+padding:10px;
+display:block;
+width:fit-content;
+margin:auto;
+}
+.login{
+    margin:auto;
+    color:#ffffff;
+    text-decoration: none;
+    text-decoration: none;
+    border: 1px solid;
+    border-color: #ffffff;
+border-radius: 8px; 
+padding:10px;
+display:block;
+width:fit-content;
+}
+
+.back{
+    color:#ffffff;
+    bacground:#a0a0a0;
+    text-decoration: none;
+    border: 1px solid;
+    border-color: #ffffff;
+border-radius: 8px; /* 半径が8pxの角丸 */
+padding:10px;
+display:block;
+width:fit-content;
+}
