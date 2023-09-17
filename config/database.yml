@@ -8,3 +8,8 @@ development:
 
 production:
   <<: *default
+  
+  host: dpg-ck38at36fquc7390vjp0-a
+  database: s_original_uc87
+  username: s_original_uc87_user
+  password: aKYSO5XRpxLRjYUk6V0ZniHGzmsSe0Rb
