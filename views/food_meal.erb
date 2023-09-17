@@ -2,22 +2,22 @@
     <header>
         <h1>食べ残し</h1>
     </header>
-    <div class="meal_wrap">
+    <div class="meal_wrap anime">
         <form action="/food_meal_post" method="post">
             <div>
-                <div class="input_wrap">
+                <div class="input_wrap anime">
                     <span>Dish's name</span>
                     <input name="food_name" placeholder="Ex.) パスタ ">
                 </div>
-                <div class="input_wrap">
+                <div class="input_wrap anime">
                      <span>Amount</span>
                     <input name="amount" placeholder="Ex.) 1500(g)">
                 </div>
-                <div class="input_wrap">
+                <div class="input_wrap anime">
                      <span>Day</span>
                     <input name="date" placeholder="Ex.) 水曜日">
                 </div>
-                <div class="input_wrap">
+                <div class="input_wrap anime">
                     <input type="submit" value="Record"style="margin:30px auto;">
                 </div>
             </div>
@@ -26,6 +26,17 @@
     </div>
 </body>
 <style>
+.anime{
+    position: relative;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+.animated{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
 header{
     height: 125px;
     background-color:#24B5A3;

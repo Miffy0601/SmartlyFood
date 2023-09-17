@@ -2,26 +2,26 @@
     <header>
         <h1>未使用</h1>
     </header>
-    <div class="unused_wrap">
+    <div class="unused_wrap anime">
         <form action="/food_unused_post" method="post">
             <div>
-                <div class="input_wrap">
+                <div class="input_wrap anime">
                     <span>Food's name</span>
                     <input name="food_name" placeholder="Ex.) にんじん ">
                 </div>
-                <div class="input_wrap">
+                <div class="input_wrap anime">
                      <span>Amount</span>
                     <input name="amount" placeholder="Ex.) 1500">
                 </div>
-                <div class="input_wrap">
+                <div class="input_wrap anime">
                      <span>Quantity</span>
                     <input name="quantity" placeholder="Ex.) 1">
                 </div>
-                <div class="input_wrap">
+                <div class="input_wrap anime">
                      <span>Day</span>
                     <input name="date" placeholder="Ex.) 日曜日">
                 </div>
-                <div class="input_wrap">
+                <div class="input_wrap anime">
                     <input type="submit" value="Record"style="margin:30px auto;">
                 </div>
             </div>
@@ -30,6 +30,16 @@
     </div>
 </body>
 <style>
+.anime{
+    position: relative;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+.animated{
+    transform: translateY(0px);
+    opacity: 1;
+}
 header{
     height: 125px;
     background-color:#24B5A3;

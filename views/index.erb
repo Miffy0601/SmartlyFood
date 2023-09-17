@@ -14,12 +14,12 @@
     <header>
         <h1>メニュー選択</h1>
     </header>
-    <div class="menu_wrap">
-        <div class="button_wrap">
-            <a href="/food_unused">未使用</a>
+    <div class="menu_wrap anime">
+        <div class="button_wrap anime">
+            <a href="/food_unused" class="anime">未使用</a>
                 <p>未使用だけど、賞味期限過ぎてしまったり、腐食したりしている場合はこちら。</p>
-            <a href="/food_meal">食べ残し</a>
-            <p>食べ残しの入力はこちら。</p>
+            <a href="/food_meal" class="anime">食べ残し</a>
+            <p class="anime">食べ残しの入力はこちら。</p>
         </div>
         <img src="./assets/img/christmas.svg">
         </div>
@@ -28,6 +28,16 @@
 
 <style>
 
+.anime{
+    position: relative;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+.animated{
+    transform: translateY(0px);
+    opacity: 1;
+}
 header{
     height: 125px;
     background-color:#24B5A3;
@@ -86,7 +96,12 @@ header{
       object-fit:cover;
   }
   .button_wrap{
-      padding:5px;
+      padding:10px 30px;
+      margin:0px;
+      width:100%;
+  }
+  .button_wrap a{
+      width:100%;
   }
     
 </style>

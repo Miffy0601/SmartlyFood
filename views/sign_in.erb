@@ -2,27 +2,39 @@
   <img src="./assets/img/cafe.png" alt="" class="pc_img">
   <img src="./assets/img/food_img_img.jpeg" alt="" class="sp_img">
   <div class="signin_view_right">
-    <p class="title">Smartly Food</p>
-    <p class="sub_title">あなたのちょっとした工夫で世界への貢献を。</p>
+    <p class="title anime">Smartly Food</p>
+    <p class="sub_title anime">あなたのちょっとした工夫で世界への貢献を。</p>
     <form action="/signin" method="post">
-      <div class="input_wrap">
+      <div class="input_wrap anime">
         <span>Mail Address</span>
         <input type="text" name="mail"  >
       </div>
-      <div class="input_wrap">
+      <div class="input_wrap anime">
         <span>Password</span>
         <input type="password" name="password" >
       </div>
       
-      <input class="login_button"type="submit" value="ログイン">
+      <input class="login_button anime"type="submit" value="ログイン">
     </form>  
-    <a href="/signup" class="signup_button">
+    <a href="/signup" class="signup_button anime">
       新規登録
     </a>
   </div>
 </div>
 
 <style>
+
+.anime{
+    position: relative;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+.animated{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
   .signin_view{
     display:flex;
   }

@@ -16,6 +16,7 @@
 
   <script>
     var ctx = document.getElementById("Graph");
+    
     var myBarChart = new Chart(ctx, {
       //折れ線グラフ
       type: 'line',
@@ -105,9 +106,35 @@
             }
           }]
         },
+        responsive: true, // レスポンシブ対応
+        maintainAspectRatio: false, // アスペクト比を維持しない
       }
     });
+    function updateChartOptions() {
+      if (window.innerWidth <= 768) {
+        document.querySelector("#Graph").height=900
+        // 画面幅が768px以下の場合、縦のメモリ幅を大きくする
+        myBarChart.options.scales.yAxes[0].ticks.suggestedMax = 10;
+        myBarChart.options.scales.yAxes[0].ticks.suggestedMin = 10;
+        myBarChart.options.scales.yAxes[0].ticks.stepSize = 0.5;
+      } else {
+        document.querySelector("#Graph").height=800
+        // 画面幅が769px以上の場合、通常のメモリ幅に戻す
+        myBarChart.options.scales.yAxes[0].ticks.suggestedMax = 3.5;
+        myBarChart.options.scales.yAxes[0].ticks.suggestedMin = 10;
+        myBarChart.options.scales.yAxes[0].ticks.stepSize = 0.5;
+      }
+
+      console.log("OK")
+      // グラフの再描画
+      myBarChart.update();
+    }
+    window.addEventListener('resize', updateChartOptions);
+
+    // 初回の設定更新
+    updateChartOptions();
   </script>
+  
 <style>
 .back{
     display:block;
@@ -127,8 +154,10 @@
 }
 @media screen and (max-width: 1024px) {
   .back{
-  width:100%;
+  width:80%;
   height:100%;
+  margin:0 auto;
+  margin-bottom:80px;
 }
 </style>
 </body>
