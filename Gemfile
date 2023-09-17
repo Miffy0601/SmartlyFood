@@ -13,7 +13,7 @@ gem 'bcrypt'
 group :development do
   # gem 'debase'
   gem 'fastri'
-  gem 'pry'
+  # gem 'pry'
   gem 'rcodetools'
   gem 'rubocop'
   gem 'rubocop-performance'
