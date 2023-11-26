@@ -30,7 +30,7 @@
             label: '食べ残し',
             data: [
               <% @foods.each do |food| %>
-                <%if(!food.meal.empty? )%>
+                <%if(!food.food_name.empty? )%>
                   <%= food.amount.to_f  %>,
                 <% elsif (food.meal.empty? ) %> 
                   0,
@@ -47,7 +47,7 @@
             fontColor: "black",
             data: [
               <% @foods.each do |food| %>
-                <%if(!food.food_name.empty?)%>
+                <%if(food.food_name.empty?)%>
                   <%= food.amount.to_f * food.quantity  / 1000 %>,
                 <% elsif (food.meal.empty? ) %> 
                   0,
