@@ -11,11 +11,20 @@
                 </div>
                 <div class="input_wrap anime">
                      <span>Amount</span>
-                    <input name="amount" placeholder="Ex.) 1500(g)">
+                    <input name="amount" placeholder="Ex.) 100(g)">
                 </div>
                 <div class="input_wrap anime">
                      <span>Day</span>
-                    <input name="date" placeholder="Ex.) 水曜日">
+                <select id="Day" name="date">
+                        <option value="月曜日">月曜日</option>
+                        <option value="火曜日">火曜日</option>
+                        <option value="水曜日">水曜日</option>
+                        <option value="木曜日">木曜日</option>
+                        <option value="金曜日">金曜日</option>
+                        <option value="土曜日">土曜日</option>
+                        <option value="日曜日">日曜日</option>
+                    </select>
+                    
                 </div>
                 <div class="input_wrap anime">
                     <input type="submit" value="Record"style="margin:30px auto;">
@@ -35,6 +44,15 @@
 .animated{
     transform: translateY(0px);
     opacity: 1;
+}
+
+#Day {
+width:400px;
+height:60px;
+margin-top:20px;
+background-color:#D9D9D9;
+border:0px;
+margin:30px;
 }
 
 header{

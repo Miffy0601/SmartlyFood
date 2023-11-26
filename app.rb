@@ -2,6 +2,7 @@ require 'bundler/setup'
 Bundler.require
 require 'sinatra/reloader' if development?
 require './models.rb'
+require 'pry'
 
 enable :sessions
 
@@ -49,9 +50,10 @@ post '/signin' do
     user = User.find_by(mail:params[:mail])
     if user && user.authenticate(params[:password])
         session[:user] = user.id
+        erb :index
+    else
+        erb :sign_in
     end
-    
-    erb :index
 end
 
 post '/signup'do
@@ -102,8 +104,7 @@ post '/food_meal_post' do
     end
    
     food = Food.find_by(date: params[:date])
-    food.meal = params[:meal],
-    food.quantity = params[:quantity],
+    food.food_name = params[:food_name],
     food.amount = params[:amount].to_i
     food.save
     @foods = Food.all.sort_by{|food| food.date}

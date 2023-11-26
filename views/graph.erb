@@ -31,7 +31,7 @@
             data: [
               <% @foods.each do |food| %>
                 <%if(!food.meal.empty? )%>
-                  <%= food.amount.to_f / 1000 %>,
+                  <%= food.amount.to_f  %>,
                 <% elsif (food.meal.empty? ) %> 
                   0,
                 <% end %> 
@@ -97,9 +97,9 @@
             },
             ticks: {
               fontColor: "rgb(36,181,163)",             // 目盛りの色
-              suggestedMax: 3.5,
+              suggestedMax: 1200,
               suggestedMin: 0,
-              stepSize: 0.5, //　Y軸の目盛りの幅数
+              stepSize: 150, //　Y軸の目盛りの幅数
               callback: function(value, index, values){
                 return  value
               }
@@ -114,15 +114,15 @@
       if (window.innerWidth <= 768) {
         document.querySelector("#Graph").height=900
         // 画面幅が768px以下の場合、縦のメモリ幅を大きくする
-        myBarChart.options.scales.yAxes[0].ticks.suggestedMax = 10;
+        myBarChart.options.scales.yAxes[0].ticks.suggestedMax = 1000;
         myBarChart.options.scales.yAxes[0].ticks.suggestedMin = 10;
-        myBarChart.options.scales.yAxes[0].ticks.stepSize = 0.5;
+        myBarChart.options.scales.yAxes[0].ticks.stepSize = 100;
       } else {
         document.querySelector("#Graph").height=800
         // 画面幅が769px以上の場合、通常のメモリ幅に戻す
-        myBarChart.options.scales.yAxes[0].ticks.suggestedMax = 3.5;
+        myBarChart.options.scales.yAxes[0].ticks.suggestedMax = 2000;
         myBarChart.options.scales.yAxes[0].ticks.suggestedMin = 10;
-        myBarChart.options.scales.yAxes[0].ticks.stepSize = 0.5;
+        myBarChart.options.scales.yAxes[0].ticks.stepSize = 120;
       }
 
       console.log("OK")
